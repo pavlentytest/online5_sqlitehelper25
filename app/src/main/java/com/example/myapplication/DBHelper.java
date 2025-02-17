@@ -25,6 +25,11 @@ public class DBHelper extends SQLiteOpenHelper {
                 + "name TEXT, "
                 + "year INTEGER "
                 + ");");
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         db.execSQL("INSERT INTO "+TABLE_NAME + " (name, year) VALUES ('Ivanov Ivan',2010)");
         db.execSQL("INSERT INTO "+TABLE_NAME + " (name, year) VALUES ('Petrova Maria',2015)");
         db.execSQL("INSERT INTO "+TABLE_NAME + " (name, year) VALUES ('Sidorov Oleg',2006)");
@@ -33,6 +38,11 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<User> getAll() {
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         ArrayList<User> list = new ArrayList<>();
         String sql = "SELECT * FROM "+TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();

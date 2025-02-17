@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         DBHelper dbHelper = new DBHelper(getApplicationContext());
         recyclerView.setAdapter(new MyAdapter(dbHelper.getAll()));
+        new Thread(() -> {
+            // положить что-то нехорошее!
+        }).start();
 
     }
 }
